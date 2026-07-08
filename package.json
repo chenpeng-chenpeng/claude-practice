@@ -1,0 +1,17 @@
+{
+  "name": "claude-practice",
+  "version": "1.0.0",
+  "private": true,
+  "description": "User management module practice",
+  "scripts": {
+    "test": "jest --verbose"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "main": "users.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
