@@ -68,12 +68,24 @@ function divide(a, b) {
   return numA / numB;
 }
 
+/**
+ * 幂运算 — 计算 a 的 b 次方
+ * @param {number} a - 底数
+ * @param {number} b - 指数
+ * @returns {number} a ** b
+ */
+function power(a, b) {
+  const [numA, numB] = validateNumbers(a, b);
+  return numA ** numB;
+}
+
 // 操作映射表 — 消除深层 if/else 嵌套
 const OPERATIONS = {
   add,
   subtract,
   multiply,
   divide,
+  power,
 };
 
 /**
@@ -97,5 +109,6 @@ module.exports = {
   subtract,
   multiply,
   divide,
+  power,
   calculate,
 };

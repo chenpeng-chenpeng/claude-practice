@@ -8,7 +8,7 @@ const b = parseFloat(process.argv[4]);
 
 if (process.argv.length < 5 || isNaN(a) || isNaN(b) || !op) {
   console.log('用法: node run-calculator.js <数字> <操作符> <数字>');
-  console.log('操作符: add, subtract, multiply, divide');
+  console.log('操作符: add, subtract, multiply, divide, power');
   console.log('示例: node run-calculator.js 10 add 5');
   process.exit(1);
 }

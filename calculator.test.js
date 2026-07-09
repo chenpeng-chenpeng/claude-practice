@@ -5,6 +5,7 @@ const {
   subtract,
   multiply,
   divide,
+  power,
   calculate,
 } = require('./calculator');
 
@@ -117,6 +118,35 @@ describe('divide', () => {
 });
 
 // ---------------------------------------------------------------------------
+// power
+// ---------------------------------------------------------------------------
+describe('power', () => {
+  test('calculates a raised to power b', () => {
+    expect(power(2, 3)).toBe(8);
+  });
+
+  test('returns 1 when exponent is 0', () => {
+    expect(power(5, 0)).toBe(1);
+  });
+
+  test('handles negative exponent', () => {
+    expect(power(2, -1)).toBe(0.5);
+  });
+
+  test('handles decimal exponent', () => {
+    expect(power(9, 0.5)).toBe(3);
+  });
+
+  test('parses string inputs', () => {
+    expect(power('3', '2')).toBe(9);
+  });
+
+  test('throws TypeError for non-numeric input', () => {
+    expect(() => power('abc', 2)).toThrow(TypeError);
+  });
+});
+
+// ---------------------------------------------------------------------------
 // calculate
 // ---------------------------------------------------------------------------
 describe('calculate', () => {
@@ -137,6 +167,6 @@ describe('calculate', () => {
   });
 
   test('throws Error for unsupported operation', () => {
-    expect(() => calculate('power', 2, 3)).toThrow(/不支持的操作/);
+    expect(() => calculate('modulo', 2, 3)).toThrow(/不支持的操作/);
   });
 });
